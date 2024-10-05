@@ -5,7 +5,7 @@ type Props = {
     size: number;
     
 }
-const Logo = ({size}: Props) => {
+export const Logo = ({size}: Props) => {
     return (
         <Link href="/">
             <Image
@@ -19,4 +19,3 @@ const Logo = ({size}: Props) => {
     )
 }
 
-export default Logo

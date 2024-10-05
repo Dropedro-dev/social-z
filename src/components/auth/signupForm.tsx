@@ -5,8 +5,9 @@ import { Input } from "../UI/input";
 import { Button } from "../UI/buttom";
 
 
-const SigninForm = () => {
+const SignupForm = () => {
     const router = useRouter();
+    const [nameField, setNameField] = useState('')
     const [emailField, setEmailField] = useState('');
     const [passField, setPassField] =   useState('');
 
@@ -16,6 +17,12 @@ const SigninForm = () => {
 
     return(
         <>
+            <Input 
+                type="text"
+                placeholder="Digite seu nome"
+                value={nameField}
+                onChange={t => setNameField(t)}
+            />
             <Input 
                 type="email" 
                 placeholder="Digite seu email"
@@ -29,7 +36,7 @@ const SigninForm = () => {
                 onChange={t => setPassField(t)}
             />
             <Button
-                label="Entrar"
+                label="cadastrar"
                 onClick={handleEnterButton}
                 size={1}
             />
@@ -37,4 +44,4 @@ const SigninForm = () => {
     )
 }
 
-export default SigninForm;
+export default SignupForm;
