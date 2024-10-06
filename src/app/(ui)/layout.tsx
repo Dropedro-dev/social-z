@@ -4,6 +4,10 @@ import { NavItem } from "@/components/nav/nav-item";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { NavLogout } from "@/components/nav/nav-logout";
+import { NavMyProfile } from "@/components/nav/nav-myprofile";
+import { SearchInput } from "@/components/UI/search-Input";
+
+
 type Props ={
     children: ReactNode;
 }
@@ -27,15 +31,16 @@ const Layout = ({children}: Props) => {
                     />
                     </nav>
                 </div>
-                <div className="mb-6 flex flex-vol gap-4">
+                <div className="mb-6 flex flex-col gap-4">
                     <NavLogout />
+                    <NavMyProfile />
                 </div>
             </section>
             <section className="flex-1 max-w-lg">
                 {children}
             </section>
             <aside className="hidden lg:flex flex-col gap-6 sticky top-0 h-fit w-96 px-8 py-6 border-l-2 border-gray-900">
-                
+                <SearchInput />
             </aside>
         </main>
     )
