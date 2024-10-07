@@ -6,6 +6,8 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { NavLogout } from "@/components/nav/nav-logout";
 import { NavMyProfile } from "@/components/nav/nav-myprofile";
 import { SearchInput } from "@/components/UI/search-Input";
+import { TrendingArea } from "@/components/UI/trending-area";
+import { RecomendationArea } from "@/components/UI/recomendation-area";
 
 
 type Props ={
@@ -40,7 +42,9 @@ const Layout = ({children}: Props) => {
                 {children}
             </section>
             <aside className="hidden lg:flex flex-col gap-6 sticky top-0 h-fit w-96 px-8 py-6 border-l-2 border-gray-900">
-                <SearchInput />
+                <SearchInput hideOnSearch/>
+                <TrendingArea />
+                <RecomendationArea />
             </aside>
         </main>
     )

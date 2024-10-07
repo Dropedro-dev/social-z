@@ -3,21 +3,26 @@
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 import { Input } from "./input"
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type Props = {
     defaultValue?: string;
+    hideOnSearch?: boolean;
 }
 
-export const SearchInput = ({defaultValue}: Props) => {
-    const Router = useRouter();
+export const SearchInput = ({defaultValue, hideOnSearch}: Props) => {
+    const router = useRouter();
+    const pathname = usePathname()
     const [searchInput, setSearchInput] = useState(defaultValue?? '');
 
     const handleSearchEnter = () => {
         if(searchInput) {
-            Router.push('/search?q=' + encodeURIComponent(searchInput))
+            router.push('/search?q=' + encodeURIComponent(searchInput))
         }
     }
+
+    if(hideOnSearch && pathname ==='/search') return null;
+
     return (
         <Input
             type="search"
