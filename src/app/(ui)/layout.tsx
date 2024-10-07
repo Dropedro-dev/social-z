@@ -21,16 +21,16 @@ const Layout = ({children}: Props) => {
                 <div className=" flex-1 mt-6">
                     <Logo size={24}/>
                     <nav className="mt-11">
-                    <NavItem 
-                        href="/home"
-                        icon={faHouse}   
-                        label="Página inicial" 
-                    />
-                    <NavItem 
-                        href="/profile"
-                        icon={faUser}   
-                        label="Meu Perfil" 
-                    />
+                        <NavItem 
+                            href="/home"
+                            icon={faHouse}   
+                            label="Página inicial" 
+                        />
+                        <NavItem 
+                            href="/profile"
+                            icon={faUser}   
+                            label="Meu Perfil" 
+                        />
                     </nav>
                 </div>
                 <div className="mb-6 flex flex-col gap-4">
