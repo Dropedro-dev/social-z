@@ -1,6 +1,9 @@
+import { ProfileFeed } from "@/components/profile/profile-feed";
 import { Button } from "@/components/UI/buttom";
 import { GeneralHeader } from "@/components/UI/general-header";
 import { user } from "@/data/user";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 const Page = () => {
@@ -37,8 +40,19 @@ const Page = () => {
                     <div className="text-xl font-bold">{user.name}</div>
                     <div className="text-gray-500">@{user.slug}</div>
                     <div className="py-5 text-lg text-gray-500">{user.bio}</div>
+                    {user.link &&
+                        <div className="flex gap-2 items-center">
+                            <FontAwesomeIcon icon={faLink} className="size-5"/>
+                            <Link href={user.link} target="_blank" className="text-blue-400 hover:underline">{user.link} </Link>
+                        </div>
+                    }
+                    <div className="my-5 flex gap-6">
+                        <div className="text-xl text-gray-500"><span className="text-white pr-1">99</span><span>seguindo</span></div>
+                        <div className="text-xl text-gray-500"><span className="text-white pr-1">99</span><span>seguidores</span></div>
+                    </div>
                 </div>
             </section>
+            <ProfileFeed />
         </div>
     )
 }

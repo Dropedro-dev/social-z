@@ -5,4 +5,5 @@ export type User = {
     cover?: string;
     bio?: string;
     postCount?: number;
+    link?: string;
 }
