@@ -2,7 +2,7 @@ import { ProfileFeed } from "@/components/profile/profile-feed";
 import { Button } from "@/components/UI/buttom";
 import { GeneralHeader } from "@/components/UI/general-header";
 import { Input } from "@/components/UI/input";
-import { Textarea } from "@/components/UI/textArea";
+import { Textarea } from "@/components/UI/textarea";
 import { user } from "@/data/user";
 import { faCamera, faLink, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -53,7 +53,7 @@ const Page = () => {
                 <label>
                     <p className="text-lg text-gray-500 mb-2">Bio</p>
                     <Textarea 
-                        placeHolder="Descreva você mesmo" 
+                        placeholder="Descreva você mesmo" 
                         rows={4}
                         value={user.bio}
                     />
